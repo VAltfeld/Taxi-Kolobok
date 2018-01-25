@@ -207,6 +207,13 @@ table tr:hover {
   background-color: #e3000f;
 }
 
+.header .header__online:focus,
+.header .header__online:active,
+.header .header__online:visited {
+  text-decoration: none;
+  outline: none;
+}
+
 .header .header__online-wrapper {
   display: -webkit-box;
   display: flex;
@@ -260,6 +267,12 @@ table tr:hover {
   border-bottom: 1px dashed #000000;
 }
 
+.header .header__menu a.red {
+  text-decoration: none;
+  color: #e3000f;
+  border-bottom: none;
+}
+
 .header .header__menu a:hover {
   color: #e3000f;
   border-bottom: 1px dashed #e3000f;
@@ -268,12 +281,15 @@ table tr:hover {
 .title-image {
   display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
   width: 100%;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: start;
-  align-items: flex-start;
-  background: url("../img/title-image.jpg") no-repeat;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+  background: #3949ab url("../img/title-image.jpg") no-repeat;
   background-position: right 0px bottom 0px;
   background-size: cover;
 }
@@ -285,6 +301,24 @@ table tr:hover {
   text-transform: uppercase;
   background: rgba(0, 0, 0, 0.7);
   color: #ffffff;
+}
+
+.title-image .title-image__inst {
+  display: block;
+  margin-top: auto;
+  text-align: center;
+  color: #ffffff;
+}
+
+.content h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content p {
+  margin: 1em;
+  line-height: 1.5;
 }
 
 .services {
@@ -386,12 +420,26 @@ table tr:hover {
   text-align: center;
 }
 
+.services a,
+.services a:visited,
+.services a:active,
+.services a:focus {
+  color: #0054b9;
+  text-decoration: none;
+  border-bottom: 1px dashed #0054b9;
+}
+
+.services a:hover {
+  color: #cc0000;
+  text-decoration: none;
+  border-bottom: 1px dashed #cc0000;
+}
+
 .price {
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 50px 0px;
 }
 
 .price h2 {
@@ -428,6 +476,52 @@ table tr:hover {
   font-weight: bold;
 }
 
+.car-type {
+  position: relative;
+}
+
+.car-type__wrapper > div {
+  flex-basis: 33.33%;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #ffffff;
+}
+
+.car-type__img-1 {
+  background: url("../img/t-econom.jpg") no-repeat;
+  background-size: cover;
+  text-align: left;
+}
+
+.car-type__img-2 {
+  background: url("../img/t-comfort.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.car-type__img-3 {
+  background: url("../img/t-business.jpg") no-repeat;
+  background-size: cover;
+  text-align: right;
+}
+
+.car-type__wrapper h3 {
+  text-shadow: #000 0 0 2px;
+}
+
+.car-type__wrapper span {
+  text-shadow: #000 0 0 2px;
+}
+
 .footer {
   display: -webkit-box;
   display: flex;
@@ -448,6 +542,21 @@ table tr:hover {
 
 .footer .footer__wrapper li {
   color: #8693a2;
+}
+
+.footer .footer__wrapper li a,
+.footer .footer__wrapper li a:visited,
+.footer .footer__wrapper li a:active,
+.footer .footer__wrapper li a:focus {
+  text-decoration: none;
+  color: #ffffff;
+  border-bottom: 1px dashed #ffffff;
+}
+
+.footer .footer__wrapper li a:hover {
+  text-decoration: none;
+  color: #febf01;
+  border-bottom: 1px dashed #febf01;
 }
 
 .footer .footer__wrapper span {
@@ -501,20 +610,6 @@ table tr:hover {
   padding: 15px 50px;
 }
 
-@font-face {
-  font-family: 'OpenSans-Bold';
-  src: url('../fonts/OpenSans-Bold.woff2') format('woff2'), url('../fonts/OpenSans-Bold.ttf') format('truetype'), url('../fonts/OpenSans-Bold.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'OpenSans-Regular';
-  src: url('../fonts/OpenSans-Regular.woff2') format('woff2'), url('../fonts/OpenSans-Regular.ttf') format('truetype'), url('../fonts/OpenSans-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -535,6 +630,10 @@ h4,
 h5,
 h6 {
   font-family: 'Noto Sans', Arial, sans-serif;
+}
+
+.center {
+  text-align: center;
 }
 
 @media (min-width: 641px) {
@@ -587,6 +686,7 @@ h6 {
 
   .title-image {
     height: 550px;
+    margin-bottom: 50px;
   }
 
   .title-image .title-image__wrapper {
@@ -603,8 +703,34 @@ h6 {
     font-size: 2.5rem;
   }
 
+  .title-image .title-image__inst {
+    font-size: 2rem;
+  }
+
+  .content {
+    padding: 0px 100px 30px 100px;
+  }
+
+  .content .content__map {
+    padding: 50px 0;
+  }
+
+  .content h2 {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  .content h3 {
+    margin-bottom: 25px;
+    font-size: 18px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
   .services {
-    margin: 50px 0px;
+    margin-bottom: 50px;
   }
 
   .services .services__basic {
@@ -667,7 +793,7 @@ h6 {
   }
 
   .car-park {
-    margin: 20px 50px 0px 50px;
+    margin: 0 50px 0px 50px;
   }
 
   .car-park .car-park__brand {
@@ -677,6 +803,30 @@ h6 {
 
   .car-park .car-park__brand span {
     margin-bottom: 50px;
+  }
+
+  .car-type {
+    margin-top: -50px;
+    margin-bottom: 50px;
+    padding-top: 20.37%;
+  }
+
+  .car-type__wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: -webkit-box;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .car-type__wrapper h3 {
+    font-size: 30px;
+  }
+
+  .car-type__wrapper span {
+    font-size: 21px;
   }
 
   .footer {
@@ -734,10 +884,6 @@ h6 {
     height: 80px;
   }
 
-  .header .header__phone {
-    font-size: 14px;
-  }
-
   .header .header__navy {
     display: none;
   }
@@ -748,6 +894,7 @@ h6 {
 
   .title-image {
     height: 300px;
+    margin-bottom: 40px;
   }
 
   .title-image .title-image__wrapper {
@@ -764,8 +911,35 @@ h6 {
     font-size: 1.3rem;
   }
 
+  .title-image .title-image__inst {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding: 0px 15px 20px 15px;
+  }
+
+  .content .content__map {
+    padding: 20px 0;
+  }
+
+  .content h2 {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .content h3 {
+    margin-bottom: 25px;
+    font-size: 16px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
   .services {
-    margin: 30px 0px;
+    margin-bottom: 40px;
   }
 
   .services .services__basic {
@@ -836,7 +1010,7 @@ h6 {
   }
 
   .car-park {
-    margin: 20px 20px 30px 20px;
+    margin: 0 20px 30px 20px;
   }
 
   .car-park .car-park__brand {
@@ -848,6 +1022,33 @@ h6 {
     flex-basis: 100%;
     padding: 0 40px;
     margin-bottom: 20px;
+  }
+
+  .car-type {
+    margin-top: -40px;
+    margin-bottom: 40px;
+  }
+
+  .car-type__wrapper > div {
+    height: 200px;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+
+  .car-type__img-1 {
+    text-align: center;
+  }
+
+  .car-type__img-3 {
+    text-align: center;
+  }
+
+  .car-type__wrapper h3 {
+    font-size: 25px;
+  }
+
+  .car-type__wrapper span {
+    font-size: 20px;
   }
 
   .footer {
@@ -914,6 +1115,7 @@ h6 {
   .header .header__phone {
     left: 24px;
     margin-bottom: 20px;
+    font-size: 14px;
   }
 
   .header .header__phone-wrapper {
@@ -953,6 +1155,7 @@ h6 {
 
   .title-image {
     height: 400px;
+    margin-bottom: 50px;
   }
 
   .title-image .title-image__wrapper {
@@ -969,8 +1172,34 @@ h6 {
     font-size: 1.5rem;
   }
 
+  .title-image .title-image__inst {
+    font-size: 1.7rem;
+  }
+
+  .content {
+    padding: 0px 20px 30px 20px;
+  }
+
+  .content .content__map {
+    padding: 30px 0;
+  }
+
+  .content h2 {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+  .content h3 {
+    margin-bottom: 25px;
+    font-size: 16px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
   .services {
-    margin: 50px 0px;
+    margin-bottom: 50px;
   }
 
   .services .services__basic {
@@ -1033,7 +1262,7 @@ h6 {
   }
 
   .car-park {
-    margin: 20px 20px 30px 20px;
+    margin: 0 20px 30px 20px;
   }
 
   .car-park .car-park__brand {
@@ -1045,6 +1274,30 @@ h6 {
     flex-basis: 50%;
     padding: 0 50px;
     margin-bottom: 30px;
+  }
+
+  .car-type {
+    margin-top: -50px;
+    margin-bottom: 50px;
+    padding-top: 20.37%;
+  }
+
+  .car-type__wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: -webkit-box;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .car-type__wrapper h3 {
+    font-size: 25px;
+  }
+
+  .car-type__wrapper span {
+    font-size: 18px;
   }
 
   .footer {
@@ -1111,5 +1364,12 @@ h6 {
   .header .header__online-wrapper {
     margin-left: auto;
     margin-right: 80px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 640px) {
+  .header .header__phone {
+    margin-left: 20px;
+    font-size: 14px;
   }
 }
